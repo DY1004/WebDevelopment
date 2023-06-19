@@ -1,0 +1,98 @@
+.icon{
+  width: 30px;
+}
+
+.wrapper{
+  display: flex;
+  width: 300px;
+  height: 50px;
+  align-items: center;
+  margin: auto;
+  margin-top: 20%;
+  justify-content: space-between;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+
+.tooltip{
+  position: absolute;
+  top: 0%;
+  background-color: inherit;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+  padding: 8px;
+  border-radius: 10%;
+  opacity: 0;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  color: white;
+  font-weight: bold;
+}
+
+.tooltip::before{
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  transition: border-top-color 0.3s ease-in-out;
+}
+
+.container1:hover{
+  background-color: rgb(216, 138, 151);
+}
+.container1:hover .tooltip::before{
+  border-top-color: rgb(216, 138, 151);
+}
+
+.container2:hover{
+  background-color: #0077b5;
+}
+.container2:hover .tooltip::before{
+  border-top-color: #0077b5;
+}
+
+.container3:hover{
+  background-color: rgb(50, 50, 50);
+}
+.container3:hover .tooltip::before{
+  border-top-color: rgb(50, 50, 50);
+}
+
+.container4:hover{
+  background-color: #00acee;
+}
+.container4:hover .tooltip::before{
+  border-top-color: #00acee;
+}
+
+.container5:hover{
+  background-color: rgb(192, 6, 6);
+}
+.container5:hover .tooltip::before{
+  border-top-color: rgb(192, 6, 6);
+}
+
+.container:hover .tooltip{
+  top: -100%;
+  opacity: 1;
+}
+
+.container:hover .icon{
+  filter: invert(100%);
+}
